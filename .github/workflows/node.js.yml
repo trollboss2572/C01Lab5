@@ -27,6 +27,7 @@ jobs:
 
             - name: MongoDB in GitHub Actions
               uses: supercharge/mongodb-github-action@1.10.0
+            - run: npm init
             - run: npm i mongodb
             - run: npm help
             - run: mkdir db
