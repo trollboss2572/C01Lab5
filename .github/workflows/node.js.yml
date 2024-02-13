@@ -38,5 +38,4 @@ jobs:
                 node-version: ${{ matrix.node-version }}
             - run: npm i
             - run: npm run dev &
-            - run: sleep 10 #Wait for server to start
             - run: npm test
