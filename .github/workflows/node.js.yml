@@ -29,9 +29,9 @@ jobs:
               uses: supercharge/mongodb-github-action@1.10.0
             - run: npm i mongodb
             - run: mkdir db
-            - run: mongod --dbpath=/db
+            - run: npm mongod --dbpath=/db
 
-            
+
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v3
               with:
