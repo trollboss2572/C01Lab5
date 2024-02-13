@@ -31,7 +31,7 @@ jobs:
             - run: npm i mongodb
             - run: npm help
             - run: mkdir db
-            - run: npm mongod --dbpath=/db
+            - run: mongod
 
 
             - name: Use Node.js ${{ matrix.node-version }}
