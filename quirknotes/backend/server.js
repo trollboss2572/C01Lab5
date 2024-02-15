@@ -30,6 +30,12 @@ app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
   });
 
+app.use("/", express.json(), async (req, res, next) =>
+{
+  console.log(`HTTP Request: ${req.query}`)
+  next()
+})
+
 app.use(cors());
 
 // Collections to manage
@@ -44,7 +50,7 @@ app.get("/getAllNotes", express.json(), async (req, res) => {
     // Find notes with username attached to them
     const collection = db.collection(COLLECTIONS.notes);
     const data = await collection.find().toArray();
-    res.json({ response: [] });
+    res.json({ response: data });
   } catch (error) {
     res.status(500).json({error: error.message})
   }
